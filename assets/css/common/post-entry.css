@@ -21,7 +21,7 @@
 
 .first-entry .entry-content {
     margin: 14px 0;
-    font-size: 16px;
+    font-size: 20px; /* YA 16px main page subtitle size*/
     -webkit-line-clamp: 3;
 }
 
