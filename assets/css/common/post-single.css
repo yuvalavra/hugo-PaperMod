@@ -310,6 +310,7 @@
 .toc .details {
     display: inline;
     font-weight: 500;
+    font-size: 18px; /* YA added line, without this line it defaults to body size */
 }
 
 .toc .inner {
