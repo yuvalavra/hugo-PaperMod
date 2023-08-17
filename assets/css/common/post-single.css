@@ -291,7 +291,7 @@
     padding: 12px 0;
 }
 
-.toc .wide details summary {
+.toc-container.wide summary {
     margin-inline-start: 0px;
 }
 
