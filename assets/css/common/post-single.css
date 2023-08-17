@@ -291,6 +291,10 @@
     padding: 12px 0;
 }
 
+.toc .wide details summary {
+    margin-inline-start: 0px;
+}
+
 .toc details[open] summary {
     cursor: zoom-out;
 }
