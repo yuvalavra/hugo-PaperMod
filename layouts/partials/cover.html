@@ -6,11 +6,10 @@
     {{- $addLink := (and site.Params.cover.linkFullImages (not $.IsHome)) }}
     {{- $pageBundleCover     := (.Resources.ByType "image").GetMatch (printf "*%s*" (.Params.cover.image)) }}
     {{/*  YA  */}}
+    {{- $cover := $pageBundleCover}}
     {{ with resources }}
         {{- $globalResourcesCover := (resources.ByType "image").GetMatch (printf "*%s*" (.Params.cover.image)) }}
-        {{- $cover := (or $pageBundleCover $globalResourcesCover)}}
-    {{ else }}
-        {{- $cover := $pageBundleCover}}
+        {{- $cover = (or $pageBundleCover $globalResourcesCover)}}
     {{ end }}
     {{/*  YA  */}}
     {{- if $cover -}}{{/* i.e it is present in page bundle */}}
