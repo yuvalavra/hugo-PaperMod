@@ -102,7 +102,9 @@
     window.addEventListener('DOMContentLoaded', function (event) {
         checkTocPosition();
 
-        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        // YA TODO: make configurable
+        // elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        elements = document.querySelectorAll('h1[id],h2[id]'); // limit to h1-h2
         // Make the first header active
         activeElement = elements[0];
         /*
