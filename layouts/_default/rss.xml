@@ -32,8 +32,7 @@
     {{- with .OutputFormats.Get "RSS" -}}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{- end -}}
-    {{ range $pages }}
-    {{- if and (ne .Layout `search`) (ne .Layout `archives`) }}
+    {{ range where $pages "FirstSection.RelPermalink" "!=" "/"  }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
@@ -45,7 +44,6 @@
       <content:encoded>{{ (printf "<![CDATA[%s]]>" .Content) | safeHTML }}</content:encoded>
       {{- end }}
     </item>
-    {{- end }}
     {{ end }}
   </channel>
 </rss>
