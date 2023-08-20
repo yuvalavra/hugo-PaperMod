@@ -1,8 +1,10 @@
 :root {
     --gap: 24px;
     --content-gap: 20px;
-    --nav-width: 1024px;
-    --main-width: 720px;
+    --nav-width: 1120px; /* YA 1024px */
+    --main-width: 840px; /* YA 720px*/
+    --article-width: 800px; /* YA 650px;*/
+    --toc-width: 300px;
     --header-height: 60px;
     --footer-height: 60px;
     --radius: 8px;

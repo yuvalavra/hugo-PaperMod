@@ -1,6 +1,7 @@
 {{- define "main" }}
 
 <article class="post-single">
+  {{- if (not .Params.removePostHeader) }}
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title">
@@ -21,6 +22,7 @@
     </div>
     {{- end }}
   </header>
+  {{- end }}
   {{- $isHidden := .Params.cover.hidden | default site.Params.cover.hiddenInSingle | default site.Params.cover.hidden }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
   {{- if (.Param "ShowToc") }}
@@ -34,7 +36,7 @@
     {{- else }}{{ .Content }}{{ end }}
   </div>
   {{- end }}
-
+  {{- if (not .Params.removePostFooter) }}
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">
@@ -49,6 +51,7 @@
     {{- partial "share_icons.html" . -}}
     {{- end }}
   </footer>
+  {{- end }}
 
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
